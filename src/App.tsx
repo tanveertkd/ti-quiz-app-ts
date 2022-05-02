@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
+import { Navbar, Footer } from "./components/index";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        TI Quiz App
-      </header>
+      <Navbar />
+      <Footer />
     </div>
   );
 }
