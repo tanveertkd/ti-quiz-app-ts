@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import './QuizCard.css';
 import tempAsset from '../../assets/temp-card-img.svg';
 
@@ -10,7 +12,7 @@ const QuizCard = () => {
                 <p className="quiz-brief">Brief about the quiz</p>
             </div>
             <div className="quiz-cta-container">
-                <a href="../routes/quizzes/quiz-one/index.html" className="quiz-cta btn btn-default-outlined">Take the quiz!</a>
+                <Link to="../quiz" className="quiz-cta btn btn-default-outlined">Take the quiz!</Link>
             </div>
         </div>
     )
