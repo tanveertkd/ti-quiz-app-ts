@@ -4,6 +4,8 @@
     display: flex;
     justify-content: space-between;
     padding: 0;
+    background-color: var(--primary-bg);
+    color: var(--color-grey);
 }
 
 .nav-main-ul {
@@ -39,6 +41,10 @@
 
 .nav-main-li {
     margin: auto 1rem;
+}
+
+.nav-main-item {
+    color: var(--color-grey);
 }
 
 /* Navigation bar ends */

@@ -7,8 +7,23 @@
   --color-hover-light-grey: #dbd7d7;
 }
 
+/* The color here are just inverted. Name is kept the same */
+
+.dark-mode {
+  --primary-bg: #343232;
+  --color-grey: #F5F5F5;
+  --color-dark-grey: #2b2d42;
+  --color-light-grey: #8d99ae;
+  /* --color-grey: #edf2f4; */
+  --color-red: #ef233c;
+  --color-red-dark: #d90429;
+  --color-hover-light-grey: #dbd7d7;
+}
+
 .App {
   text-align: center;
+  background-color: var(--primary-bg);
+  color: var(--color-grey);
 }
 
 a {

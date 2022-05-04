@@ -4,7 +4,6 @@ import './Categories.css';
 const Categories = () => {
     return (
         // <!-- Quiz category body -->
-
         <div className="quiz-body-container">
             <h1 className="quiz-body-head">Categories</h1>
 

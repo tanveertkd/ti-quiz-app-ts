@@ -1,3 +1,9 @@
+.quiz-body {
+    background-color: var(--primary-bg);
+    color: var(--color-grey);
+    text-align: center;
+}
+
 .quiz-data {
     width: 95%;
 }
@@ -33,6 +39,7 @@
 .question-options {
     margin: 2rem auto;
     width: 70%;
+    box-shadow: 0 0 10px var(--color-hover-light-grey);
 }
 
 .option-btn {
@@ -70,6 +77,11 @@
 .change-btn:hover {
     background-color: var(--color-grey);
     color: var(--primary-bg);
+    cursor: pointer;
+}
+
+.change-btn:hover > i{
+    border-color: var(--primary-bg);
 }
 
 .arrow {
@@ -91,6 +103,7 @@
     width: fit-content;
     border: none;
     border-radius: 0.2rem;
+    color: var(--color-grey);
 }
 
 /* Media */

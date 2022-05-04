@@ -4,8 +4,9 @@ import './QuizCard.css';
 import tempAsset from '../../assets/temp-card-img.svg';
 
 const QuizCard = () => {
+    const theme = localStorage.getItem("currentTheme");
     return (
-        <div className="quiz-card">
+        <div className={`quiz-card ${theme === "dark" ? "dark-mode" : ""}`}>
             <img src={tempAsset} alt="quiz asset" className="quiz-card-image" />
             <div className="quiz-card-text">
                 <p className="quiz-title">Quiz Title</p>

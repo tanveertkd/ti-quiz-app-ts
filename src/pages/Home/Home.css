@@ -1,4 +1,6 @@
 .quiz-home {
+    background-color: var(--primary-bg);
+    color: var(--color-grey);
     height: calc(100vh - 10rem);
 }
 

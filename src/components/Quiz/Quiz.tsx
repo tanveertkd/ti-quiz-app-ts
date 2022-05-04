@@ -1,36 +1,17 @@
+import { useState } from 'react';
+import { questionsObj } from '../../QuizList';
 import './Quiz.css';
 
 const Quiz = () => {
-    const questionsObj = {
-        id: 0,
-        quiztitle: "Quiz Title 1",
-        questions: [
-            {
-                question: 'This is the first question.',
-                options: [
-                    'This is option 1',
-                    'This is option 2',
-                    'This is option 3',
-                    'This is option 4',
-                ],
-                answer: 'This is option 1',
-            },
-            // {
-            //     question: "Question 2",
-            //     options: [
-            //         'This is option 1',
-            //         'This is option 2',
-            //         'This is option 3',
-            //         'This is option 4',
-            //     ],
-            //     answer: "option2"
-            // },
-        ],
-    };
+    let quizID = 0;
+    const [questionIndex, setQuestionIndex] = useState(0);
+    const currentQuiz = questionsObj.questionsArray.find((current) => current.id === quizID);
+    console.log(currentQuiz);
+    console.log(questionIndex+1 === currentQuiz?.questions.length)
 
     return (
         <div className="quiz-body">
-            <h2>Quiz Title</h2>
+            <h2>{currentQuiz?.quiztitle}</h2>
 
             {/* <div className="mdoal">
                 <RulesModal />
@@ -44,29 +25,48 @@ const Quiz = () => {
                     <p>Time Remaining</p>
                 </div>
 
-                <form className="quiz-form">
+                <div className="quiz-form">
                     <div className="question-container">
                         <p className="question">
-                            1. {questionsObj.questions.map((item) => item.question)}
+                            {questionIndex+1}. {currentQuiz?.questions[questionIndex].question}
                         </p>
                         <div className="question-options grid-50-50">
-                            {questionsObj.questions.map((item) => {
-                                return item.options.map(option => {
-                                    return (
-                                        <div className="grid-item">
-                                            <button key={option} className="option-btn">{option}</button>
-                                        </div>
-                                    );
-                                })
+                            {currentQuiz?.questions[questionIndex].options.map((item) => {
+                                return (
+                                    <div className="grid-item">
+                                        <button key={item} className="option-btn">
+                                            {item}
+                                        </button>
+                                    </div>
+                                );
+
+                                // return item.options.map((option) => {
+                                //     return (
+                                //         <div className="grid-item">
+                                //             <button key={option} className="option-btn">
+                                //                 {option}
+                                //             </button>
+                                //         </div>
+                                //     );
+                                // });
                             })}
                         </div>
                     </div>
                     <div className="prev-next-container">
-                        <button className="previous-question change-btn">
-                        <i className='arrow prev-arrow'></i> Previous
+                        <button
+                            className="previous-question change-btn"
+                            onClick={() => {
+                                questionIndex !== 0 && setQuestionIndex((prev) => prev - 1);
+                            }}
+                        >
+                            <i className="arrow prev-arrow"></i> Previous
                         </button>
-                        <button className="next-question change-btn">
-                            Next <i className='arrow next-arrow'></i>
+                        <button
+                            className="next-question change-btn"
+                            disabled={questionIndex+1 === currentQuiz?.questions.length}
+                            onClick={() => setQuestionIndex((prev) => prev + 1)}
+                        >
+                            Next <i className="arrow next-arrow"></i>
                         </button>
                     </div>
                     <div className="btn-submit-quiz">
@@ -80,7 +80,7 @@ const Quiz = () => {
                             Quit
                         </a>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     );
