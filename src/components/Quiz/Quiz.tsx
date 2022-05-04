@@ -32,6 +32,10 @@ const Quiz = () => {
         <div className="quiz-body">
             <h2>Quiz Title</h2>
 
+            {/* <div className="mdoal">
+                <RulesModal />
+            </div> */}
+
             <div className="quiz-data">
                 <div className="quiz-timer">
                     <i className="fa-solid fa-clock">
