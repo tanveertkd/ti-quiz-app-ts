@@ -1,6 +1,6 @@
 import {Routes, Route} from 'react-router-dom';
 import { Quiz, SignUp } from '../components';
-import { Home, Categories, Authentication, Rules } from '../pages';
+import { Home, Categories, Authentication, Rules, Results } from '../pages';
 
 const NavigationRoutes = () => {
     
@@ -12,6 +12,7 @@ const NavigationRoutes = () => {
         <Route path="signup" element={<SignUp />} />
         <Route path="quiz" element={<Quiz />}/>
         <Route path="rules" element={<Rules />} />
+        <Route path="results" element={<Results />} />
     </Routes>
 }
 

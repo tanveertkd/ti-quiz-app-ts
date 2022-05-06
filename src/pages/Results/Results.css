@@ -23,6 +23,14 @@
     margin-left: 0.5rem;
 }
 
+.red-span {
+    color: var(--color-button-solid-error-hover)
+}
+
+.green-span {
+    color: var(--color-button-solid-success-hover);
+}
+
 .quiz-form {
     display: flex;
     justify-content: center;
@@ -56,6 +64,15 @@
 .option-btn:hover {
     background-color: var(--color-grey);
     color: var(--primary-bg);
+}
+
+.option-correct {
+    background-color: var(--color-button-solid-success-hover);
+    color: var(--primary-bg);
+}
+
+.option-correct:hover {
+    background-color: var(--color-button-solid-success);
 }
 
 .prev-next-container {
@@ -95,16 +112,6 @@
     transform: rotate(135deg);
 }
 
-.next-arrow {
-    transform: rotate(-45deg);
-}
-
-.btn-submit-quiz .quiz-submit-btn {
-    width: fit-content;
-    border: none;
-    border-radius: 0.2rem;
-    color: var(--primary-bg);
-}
 
 /* Media */
 

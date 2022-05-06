@@ -2,7 +2,7 @@ const questionsObj = {
     questionsArray: [
         {
             id: 0,
-            quiztitle: 'Quiz Title 1',
+            quizTitle: 'Quiz Title 1',
             questions: [
                 {
                     question: 'This is the first question.',
@@ -22,7 +22,7 @@ const questionsObj = {
                         'This is option 3',
                         'This is option 4',
                     ],
-                    answer: "option2"
+                    answer: 'This is option 2'
                 },
                 {
                     question: "This is the third question.",
@@ -32,7 +32,7 @@ const questionsObj = {
                         'This is option 3',
                         'This is option 4',
                     ],
-                    answer: "option2"
+                    answer: 'This is option 3'
                 },
                 {
                     question: "This is the fourth question.",
@@ -42,7 +42,7 @@ const questionsObj = {
                         'This is option 3',
                         'This is option 4',
                     ],
-                    answer: "option2"
+                    answer: 'This is option 4',
                 },
                 {
                     question: "This is the fifth question.",
@@ -58,7 +58,7 @@ const questionsObj = {
         },
         {
             id: 1,
-            quiztitle: 'Quiz Title 2',
+            quizTitle: 'Quiz Title 2',
             questions: [
                 {
                     question: 'This is the first question.',
@@ -78,7 +78,7 @@ const questionsObj = {
                         'This is option 3',
                         'This is option 4',
                     ],
-                    answer: "option2"
+                    answer: 'This is option 2'
                 },
                 {
                     question: "This is the third question.",
@@ -88,7 +88,7 @@ const questionsObj = {
                         'This is option 3',
                         'This is option 4',
                     ],
-                    answer: "option2"
+                    answer: 'This is option 3'
                 },
                 {
                     question: "This is the fourth question.",
@@ -98,7 +98,7 @@ const questionsObj = {
                         'This is option 3',
                         'This is option 4',
                     ],
-                    answer: "option2"
+                    answer: 'This is option 4'
                 },
                 {
                     question: "This is the fifth question.",
@@ -108,7 +108,7 @@ const questionsObj = {
                         'This is option 3',
                         'This is option 4',
                     ],
-                    answer: "option2"
+                    answer: 'This is option 4'
                 },
             ],
         }

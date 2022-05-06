@@ -1,17 +1,28 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { questionsObj } from '../../QuizList';
 import './Quiz.css';
+import { getQuiz, matchAnswer } from '../../services';
+import { useQuiz } from '../../contexts';
 
 const Quiz = () => {
-    let quizID = 0;
+    // let quizID = 0;
     const [questionIndex, setQuestionIndex] = useState(0);
-    const currentQuiz = questionsObj.questionsArray.find((current) => current.id === quizID);
-    console.log(currentQuiz);
-    console.log(questionIndex+1 === currentQuiz?.questions.length)
+    // const currentQuiz = questionsObj.questionsArray.find((current) => current.id === quizID);
+    // console.log(currentQuiz);
+    // console.log(questionIndex+1 === currentQuiz?.questions.length)
+
+    // console.log(getQuiz(1));
+
+    const { quizState, handleCorrectAnswer } = useQuiz();
+    console.log(quizState.correctAnswers);
+
+    const { quizTitle, questions } = quizState?.currentQuiz;
+    // console.log(questions[questionIndex]);
 
     return (
         <div className="quiz-body">
-            <h2>{currentQuiz?.quiztitle}</h2>
+            <h2>{quizTitle}</h2>
 
             {/* <div className="mdoal">
                 <RulesModal />
@@ -28,27 +39,25 @@ const Quiz = () => {
                 <div className="quiz-form">
                     <div className="question-container">
                         <p className="question">
-                            {questionIndex+1}. {currentQuiz?.questions[questionIndex].question}
+                            {questionIndex + 1}. {questions[questionIndex].question}
                         </p>
                         <div className="question-options grid-50-50">
-                            {currentQuiz?.questions[questionIndex].options.map((item) => {
+                            {questions[questionIndex]?.options?.map((item) => {
                                 return (
                                     <div className="grid-item">
-                                        <button key={item} className="option-btn">
+                                        <button
+                                            key={item}
+                                            className="option-btn"
+                                            onClick={() => {
+                                                if(matchAnswer(item, questions[questionIndex].answer)){
+                                                    handleCorrectAnswer();
+                                                }
+                                            }}
+                                        >
                                             {item}
                                         </button>
                                     </div>
                                 );
-
-                                // return item.options.map((option) => {
-                                //     return (
-                                //         <div className="grid-item">
-                                //             <button key={option} className="option-btn">
-                                //                 {option}
-                                //             </button>
-                                //         </div>
-                                //     );
-                                // });
                             })}
                         </div>
                     </div>
@@ -63,16 +72,16 @@ const Quiz = () => {
                         </button>
                         <button
                             className="next-question change-btn"
-                            disabled={questionIndex+1 === currentQuiz?.questions.length}
+                            disabled={questionIndex + 1 === questions?.length}
                             onClick={() => setQuestionIndex((prev) => prev + 1)}
                         >
                             Next <i className="arrow next-arrow"></i>
                         </button>
                     </div>
                     <div className="btn-submit-quiz">
-                        <a href="./result.html" className="btn btn-success-solid quiz-submit-btn">
+                        <Link to="../results" className="btn btn-success-solid quiz-submit-btn">
                             Submit
-                        </a>
+                        </Link>
                         <a
                             href="../../categories.html"
                             className="btn btn-error-solid quiz-submit-btn"
