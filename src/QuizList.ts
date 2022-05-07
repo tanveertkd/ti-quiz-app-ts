@@ -3,6 +3,7 @@ const questionsObj = {
         {
             id: 0,
             quizTitle: 'Quiz Title 1',
+            quizBrief: 'Something about quiz 1',
             questions: [
                 {
                     question: 'This is the first question.',
@@ -52,13 +53,14 @@ const questionsObj = {
                         'This is option 3',
                         'This is option 4',
                     ],
-                    answer: "option2"
+                    answer: 'This is option 2'
                 },
             ],
         },
         {
             id: 1,
             quizTitle: 'Quiz Title 2',
+            quizBrief: 'Something about quiz 2',
             questions: [
                 {
                     question: 'This is the first question.',
@@ -115,6 +117,7 @@ const questionsObj = {
         {
             id: 2,
             quizTitle: 'Quiz Title 3',
+            quizBrief: 'Something about quiz 3',
             questions: [
                 {
                     question: 'This is the first question.',
@@ -171,6 +174,7 @@ const questionsObj = {
         {
             id: 3,
             quizTitle: 'Quiz Title 4',
+            quizBrief: 'Something about quiz 4',
             questions: [
                 {
                     question: 'This is the first question.',
@@ -227,6 +231,7 @@ const questionsObj = {
         {
             id: 4,
             quizTitle: 'Quiz Title 5',
+            quizBrief: 'Something about quiz 5',
             questions: [
                 {
                     question: 'This is the first question.',

@@ -1,31 +1,32 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import './Quiz.css';
 import { matchAnswer } from '../../services';
 import { useQuiz } from '../../contexts';
+import { RulesModal } from '../RulesModal/RulesModal';
+
+import './Quiz.css';
 
 const Quiz = () => {
     const params = useParams();
     const id = params.id!;
+    const idx = parseInt(id);
 
     const [questionIndex, setQuestionIndex] = useState(0);
     const { quizState, getQuizHandler, handleCorrectAnswer } = useQuiz();
 
     const { quizTitle, questions } = quizState?.currentQuiz;
-    console.log(quizState);
-    const idx = parseInt(id)
 
-    useEffect(() =>{ 
-        getQuizHandler(idx)
-    }, [])
+    useEffect(() => {
+        getQuizHandler(idx);
+    }, []);
 
     return (
         <div className="quiz-body">
             <h2>{quizTitle}</h2>
 
-            {/* <div className="mdoal">
+            <div className="modal-container">
                 <RulesModal />
-            </div> */}
+            </div>
 
             <div className="quiz-data">
                 <div className="quiz-timer">
@@ -48,7 +49,12 @@ const Quiz = () => {
                                             key={item}
                                             className="option-btn"
                                             onClick={() => {
-                                                if(matchAnswer(item, questions[questionIndex].answer)){
+                                                if (
+                                                    matchAnswer(
+                                                        item,
+                                                        questions[questionIndex].answer,
+                                                    )
+                                                ) {
                                                     handleCorrectAnswer();
                                                 }
                                             }}

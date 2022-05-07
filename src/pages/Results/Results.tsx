@@ -8,7 +8,7 @@ const Results = () => {
     const { quizTitle, questions } = quizState.currentQuiz;
     const correctAnswers = quizState.correctAnswers;
     return (
-        <div className="quiz-body">
+        <div className="quiz-results-body">
             <h2>{quizTitle}</h2>
 
             <div className="quiz-data">

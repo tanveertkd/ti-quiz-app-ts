@@ -1,65 +1,16 @@
 import React, { createContext, useContext, useReducer } from "react";
 import { getQuiz } from "../services";
-import {childrenType} from "../types/common.types";
-
-type quizState = {
-    currentQuiz: quiz,
-    correctAnswers: number, 
-}
-
-type quiz = {
-    id: number,
-    quizTitle: string,
-    questions: [{
-        question: string,
-        options: [],
-        answer: string
-    }]
-}
-
-type quizAction = {
-    type: 'INIT_QUIZ' | 'NEXT_QUESTION' | 'PREV_QUESTION' | 'SUBMIT' | 'HANDLE_CORRECT_ANSWER'
-    payload: any
-}
-
-type quizContextType = {
-    quizState: quizState 
-    quizDispatch: React.Dispatch<quizAction>
-    getQuizHandler: React.Dispatch<number>
-    handleCorrectAnswer: React.Dispatch<void>
-}
+import { childrenType } from "../types/common.types";
+import { quizContextType } from "../types/quiz.types";
+import { quizReducer } from "../reducers/QuizReducer";
 
 const QuizContext = createContext({} as quizContextType);
 
 const QuizContextProvider = ({children} : childrenType) => {
-    
-    const quizReducer = (state: quizState, action: quizAction) => {
-        switch(action.type){
-            case "INIT_QUIZ":
-                return {
-                    // ...state,
-                    currentQuiz: {
-                        ...state.currentQuiz,
-                        ...action.payload
-                    },
-                    correctAnswers: state.correctAnswers = 0
-                }
-            case "HANDLE_CORRECT_ANSWER":
-                return{
-                    ...state,
-                    correctAnswers: state.correctAnswers + 10
-                }
-            
-            default:
-                return {...state}
-        }
-    }
 
     const getQuizHandler = (quizID: number) => {
-        console.log('called')
         const quiz = getQuiz(quizID);
         quizDispatch({type: 'INIT_QUIZ', payload: {...quiz, correctAnswer: 0}});
-        console.log(quizState)
     }
 
     const handleCorrectAnswer = () => {

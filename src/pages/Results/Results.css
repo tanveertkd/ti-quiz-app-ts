@@ -1,4 +1,4 @@
-.quiz-body {
+.quiz-results-body {
     background-color: var(--primary-bg);
     color: var(--color-grey);
     text-align: center;
@@ -6,6 +6,7 @@
 
 .quiz-data {
     width: 95%;
+    margin: auto
 }
 
 .quiz-timer{

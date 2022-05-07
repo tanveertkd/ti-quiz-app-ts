@@ -48,3 +48,18 @@
 }
 
 /* Navigation bar ends */
+
+@media screen and (max-width: 768px) {
+
+    .nav-main-ul {
+        padding: 0.5rem;
+    }
+
+    .nav-main-li {
+        margin: auto 0.5rem;
+    }
+
+    .nav-main-middle {
+        display: none;
+    }
+}

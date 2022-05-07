@@ -58,6 +58,10 @@
     color: var(--primary-bg);
 }
 
+.option-btn .option-selected {
+    background-color: var(--color-hover-light-grey);
+}
+
 .prev-next-container {
     display: flex;
     justify-content: space-between;
@@ -106,9 +110,21 @@
     color: var(--primary-bg);
 }
 
+.modal-container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
 /* Media */
 
 @media screen and (max-width: 768px) {
+
+    .quiz-body {
+        height: auto;
+    }
+
     .quiz-form {
         padding: 0;
     }
@@ -119,5 +135,13 @@
 
     .option-btn {
         width: 100%;
+    }
+
+    .modal-container {
+        width: 90%;
+    }
+
+    .btn-submit-quiz {
+        margin: 1rem;
     }
 }
