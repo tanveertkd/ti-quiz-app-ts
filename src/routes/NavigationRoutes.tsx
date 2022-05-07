@@ -10,7 +10,7 @@ const NavigationRoutes = () => {
         <Route path="auth" element={<Authentication />}/>
         {/* Have this redirected to the auth page */}
         <Route path="signup" element={<SignUp />} />
-        <Route path="quiz" element={<Quiz />}/>
+        <Route path="/quiz/:id" element={<Quiz />}/>
         <Route path="rules" element={<Rules />} />
         <Route path="results" element={<Results />} />
     </Routes>

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useReducer } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 import { getQuiz } from "../services";
 import {childrenType} from "../types/common.types";
 
@@ -25,16 +25,13 @@ type quizAction = {
 type quizContextType = {
     quizState: quizState 
     quizDispatch: React.Dispatch<quizAction>
+    getQuizHandler: React.Dispatch<number>
     handleCorrectAnswer: React.Dispatch<void>
 }
 
 const QuizContext = createContext({} as quizContextType);
 
 const QuizContextProvider = ({children} : childrenType) => {
-
-    const handleCorrectAnswer = () => {
-        quizDispatch({type: 'HANDLE_CORRECT_ANSWER', payload: 1})
-    }
     
     const quizReducer = (state: quizState, action: quizAction) => {
         switch(action.type){
@@ -58,20 +55,34 @@ const QuizContextProvider = ({children} : childrenType) => {
         }
     }
 
+    const getQuizHandler = (quizID: number) => {
+        console.log('called')
+        const quiz = getQuiz(quizID);
+        quizDispatch({type: 'INIT_QUIZ', payload: {...quiz, correctAnswer: 0}});
+        console.log(quizState)
+    }
+
+    const handleCorrectAnswer = () => {
+        quizDispatch({type: 'HANDLE_CORRECT_ANSWER', payload: 1})
+    }
+
     const initialState = {
-        currentQuiz: {},
+        currentQuiz: {
+            id: "",
+            quizTitle: "",
+            questions: [{
+                question: "",
+                options: [],
+                answer: ""
+            }]
+        },
         correctAnswers: 0,
     };
 
     const [quizState, quizDispatch] = useReducer(quizReducer, initialState);
 
-    useEffect(() => {
-        const quiz = getQuiz(1);
-        quizDispatch({type: 'INIT_QUIZ', payload: {...quiz, correctAnswer: 0}});
-    },[])
-
     return(
-        <QuizContext.Provider value={{quizState, quizDispatch, handleCorrectAnswer}}>
+        <QuizContext.Provider value={{quizState, quizDispatch, getQuizHandler, handleCorrectAnswer}}>
             {children}
         </QuizContext.Provider>
     )

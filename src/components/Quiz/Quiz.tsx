@@ -1,24 +1,23 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { questionsObj } from '../../QuizList';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import './Quiz.css';
-import { getQuiz, matchAnswer } from '../../services';
+import { matchAnswer } from '../../services';
 import { useQuiz } from '../../contexts';
 
 const Quiz = () => {
-    // let quizID = 0;
+    const params = useParams();
+    const id = params.id!;
+
     const [questionIndex, setQuestionIndex] = useState(0);
-    // const currentQuiz = questionsObj.questionsArray.find((current) => current.id === quizID);
-    // console.log(currentQuiz);
-    // console.log(questionIndex+1 === currentQuiz?.questions.length)
-
-    // console.log(getQuiz(1));
-
-    const { quizState, handleCorrectAnswer } = useQuiz();
-    console.log(quizState.correctAnswers);
+    const { quizState, getQuizHandler, handleCorrectAnswer } = useQuiz();
 
     const { quizTitle, questions } = quizState?.currentQuiz;
-    // console.log(questions[questionIndex]);
+    console.log(quizState);
+    const idx = parseInt(id)
+
+    useEffect(() =>{ 
+        getQuizHandler(idx)
+    }, [])
 
     return (
         <div className="quiz-body">
@@ -39,7 +38,7 @@ const Quiz = () => {
                 <div className="quiz-form">
                     <div className="question-container">
                         <p className="question">
-                            {questionIndex + 1}. {questions[questionIndex].question}
+                            {questionIndex + 1}. {questions[questionIndex]?.question}
                         </p>
                         <div className="question-options grid-50-50">
                             {questions[questionIndex]?.options?.map((item) => {
