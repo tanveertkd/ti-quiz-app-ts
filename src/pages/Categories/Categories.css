@@ -1,0 +1,14 @@
+.quiz-body-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media */
+
+@media screen and (max-width: 768px) {
+    .quiz-card-container {
+        justify-items: center;
+    }
+}

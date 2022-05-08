@@ -1,0 +1,20 @@
+.quiz-home {
+    height: calc(100vh - 10rem);
+}
+
+.quiz-body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.quiz-body-subhead {
+    text-align: center;
+}
+
+.quiz-home .btn-home-cta {
+    width: fit-content;
+    border: 1px solid var(--color-button-solid-success);
+    margin: 0.5rem;
+}

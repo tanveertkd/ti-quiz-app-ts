@@ -1,0 +1,12 @@
+.modal {
+    padding: 1rem;
+}
+
+.modal-body-text {
+    font-size: 1rem;
+    text-align: start;
+}
+
+.modal-btn {
+    margin: auto 0.5rem;
+}

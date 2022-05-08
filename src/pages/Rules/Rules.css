@@ -1,0 +1,23 @@
+.rule-body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - 10rem);
+}
+
+.rule-list-ol {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.rule {
+    line-height: 1.8rem;
+    text-align: start;
+}
+
+.quiz-link {
+    color: var(--color-red);
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+}
