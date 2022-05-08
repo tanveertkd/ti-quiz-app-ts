@@ -20,6 +20,8 @@ const Quiz = () => {
         getQuizHandler(idx);
     }, []);
 
+    const [optionSelected, setOptionSelected] = useState(false)
+
     return (
         <div className="quiz-body">
             <h2>{quizTitle}</h2>
@@ -47,7 +49,11 @@ const Quiz = () => {
                                     <div className="grid-item">
                                         <button
                                             key={item}
-                                            className="option-btn"
+                                            className={`${
+                                                optionSelected
+                                                    ? 'option-btn option-selected'
+                                                    : 'option-btn'
+                                            }`}
                                             onClick={() => {
                                                 if (
                                                     matchAnswer(
@@ -57,6 +63,7 @@ const Quiz = () => {
                                                 ) {
                                                     handleCorrectAnswer();
                                                 }
+                                                setOptionSelected(true);
                                             }}
                                         >
                                             {item}

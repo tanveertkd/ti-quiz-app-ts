@@ -59,7 +59,7 @@
 }
 
 .option-btn .option-selected {
-    background-color: var(--color-hover-light-grey);
+    background-color: var(--color-grey);
 }
 
 .prev-next-container {
