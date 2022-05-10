@@ -58,8 +58,9 @@
     color: var(--primary-bg);
 }
 
-.option-btn .option-selected {
+.option-selected.option-btn {
     background-color: var(--color-grey);
+    color: var(--primary-bg);
 }
 
 .prev-next-container {

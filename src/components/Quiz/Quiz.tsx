@@ -20,7 +20,7 @@ const Quiz = () => {
         getQuizHandler(idx);
     }, []);
 
-    const [optionSelected, setOptionSelected] = useState(false)
+    const [optionSelected, setOptionSelected] = useState('');
 
     return (
         <div className="quiz-body">
@@ -50,8 +50,8 @@ const Quiz = () => {
                                         <button
                                             key={item}
                                             className={`${
-                                                optionSelected
-                                                    ? 'option-btn option-selected'
+                                                optionSelected === item
+                                                    ? 'option-selected option-btn'
                                                     : 'option-btn'
                                             }`}
                                             onClick={() => {
@@ -63,7 +63,7 @@ const Quiz = () => {
                                                 ) {
                                                     handleCorrectAnswer();
                                                 }
-                                                setOptionSelected(true);
+                                                setOptionSelected(item);
                                             }}
                                         >
                                             {item}
@@ -85,7 +85,10 @@ const Quiz = () => {
                         <button
                             className="next-question change-btn"
                             disabled={questionIndex + 1 === questions?.length}
-                            onClick={() => setQuestionIndex((prev) => prev + 1)}
+                            onClick={() => {
+                                setQuestionIndex((prev) => prev + 1);
+                                setOptionSelected('');
+                            }}
                         >
                             Next <i className="arrow next-arrow"></i>
                         </button>
@@ -94,12 +97,12 @@ const Quiz = () => {
                         <Link to="../results" className="btn btn-success-solid quiz-submit-btn">
                             Submit
                         </Link>
-                        <a
-                            href="../../categories.html"
+                        <Link
+                            to="../categories"
                             className="btn btn-error-solid quiz-submit-btn"
                         >
                             Quit
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

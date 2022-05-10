@@ -47,8 +47,8 @@ const Results = () => {
                                                         key={option}
                                                         className={`${
                                                             matchAnswer(option, question.answer)
-                                                                ? 'option-btn option-correct'
-                                                                : 'option-btn'
+                                                                ? 'answer-btn option-correct'
+                                                                : 'answer-btn'
                                                         }`}
                                                     >
                                                         {option}
