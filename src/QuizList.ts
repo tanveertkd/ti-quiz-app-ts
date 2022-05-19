@@ -2,289 +2,232 @@ const questionsObj = {
     questionsArray: [
         {
             id: 0,
-            quizTitle: 'Quiz Title 1',
-            quizBrief: 'Something about quiz 1',
+            quizTitle: 'New York',
+            quizBrief: 'This is a quiz about New York City',
             questions: [
                 {
-                    question: 'This is the first question.',
+                    question: 'What is the name of the main international airport at New York?',
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'Ronald Reagan Airport',
+                        'Thomas Jefferson Airport',
+                        'John F. Kennedy Airport',
+                        'Abraham Lincoln Airport',
                     ],
-                    answer: 'This is option 1',
+                    answer: 'John F. Kennedy Airport',
                 },
                 {
-                    question: "This is the second question.",
+                    question: "New York is often referred to as the: ",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'Big Orange',
+                        'Small Cherry',
+                        'Small Grape',
+                        'Big Apple',
                     ],
-                    answer: 'This is option 2'
+                    answer: 'Big Apple'
                 },
                 {
-                    question: "This is the third question.",
+                    question: "New York's financial center is:",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'Broadway',
+                        'Times Square',
+                        'Wall Street',
+                        'Madison Avenue',
                     ],
-                    answer: 'This is option 3'
+                    answer: 'Wall Street'
                 },
                 {
-                    question: "This is the fourth question.",
+                    question: "How many boroughs is New York made up of?",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        '2',
+                        '3',
+                        '4',
+                        '4',
                     ],
-                    answer: 'This is option 4',
+                    answer: '5',
                 },
                 {
-                    question: "This is the fifth question.",
+                    question: "Which of New York's boroughs is the largest in size?",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'Brooklyn',
+                        'Staten Island',
+                        'Queens',
+                        'Manhattan',
                     ],
-                    answer: 'This is option 2'
+                    answer: 'Queens'
                 },
             ],
         },
         {
             id: 1,
-            quizTitle: 'Quiz Title 2',
-            quizBrief: 'Something about quiz 2',
+            quizTitle: 'Technology',
+            quizBrief: 'This is a quiz about technology',
             questions: [
                 {
-                    question: 'This is the first question.',
+                    question: 'What was the name of the first engine-powered airplane to take flight?',
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'Double Eagle 2',
+                        'The Canary',
+                        'Spirit of St. Louis',
+                        'Wright Flyer 1',
                     ],
-                    answer: 'This is option 1',
+                    answer: 'Wright Flyer 1',
                 },
                 {
-                    question: "This is the second question.",
+                    question: "What year was the first email sent?",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        '1955',
+                        '1982',
+                        '1971',
+                        '2005',
                     ],
-                    answer: 'This is option 2'
+                    answer: '1971'
                 },
                 {
-                    question: "This is the third question.",
+                    question: "Who is the only person to win the Nobel Prize in two different sciences?",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'Marie Curie',
+                        'Ivan Pavlov',
+                        'Albert Einstien',
+                        'Max Planck',
                     ],
-                    answer: 'This is option 3'
+                    answer: 'Marie Curie'
                 },
                 {
-                    question: "This is the fourth question.",
+                    question: "The first robotic dinosaur was created in 2001. Which dinosaur species was it modeled after?",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'Troodon',
+                        'Apastosaurus',
+                        'T-rex',
+                        'Triceratops',
                     ],
-                    answer: 'This is option 4'
+                    answer: 'Troodon'
                 },
                 {
-                    question: "This is the fifth question.",
+                    question: "Where do more than 90 percent of the worlds robots work?",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'On the ISS',
+                        'Underwater',
+                        'In private labs',
+                        'In factories',
                     ],
-                    answer: 'This is option 4'
+                    answer: 'In factories'
                 },
             ],
         },
         {
             id: 2,
-            quizTitle: 'Quiz Title 3',
-            quizBrief: 'Something about quiz 3',
+            quizTitle: 'Mars',
+            quizBrief: 'This is a quiz on Mars',
             questions: [
                 {
-                    question: 'This is the first question.',
+                    question: 'How many moons does Mars have?',
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        '1',
+                        '2',
+                        '4',
+                        '5',
                     ],
-                    answer: 'This is option 1',
+                    answer: '2',
                 },
                 {
-                    question: "This is the second question.",
+                    question: "What is Mars's nickname?",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'The red planet',
+                        'The dusty planet',
+                        'The hot planet',
+                        'The quiet planet',
                     ],
-                    answer: 'This is option 2'
+                    answer: 'The red planet'
                 },
                 {
-                    question: "This is the third question.",
+                    question: "About how long would it take to travel to Mars?",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'Three days',
+                        'A month',
+                        'Eight months',
+                        'Two years',
                     ],
-                    answer: 'This is option 3'
+                    answer: 'Eight months'
                 },
                 {
-                    question: "This is the fourth question.",
+                    question: "This planet is named after the Roman god Mars. What is he the god of?",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'Fire',
+                        'Water',
+                        'Agriculture',
+                        'War',
                     ],
-                    answer: 'This is option 4'
+                    answer: 'War'
                 },
                 {
-                    question: "This is the fifth question.",
+                    question: "Mars's atmosphere has too much of which gas, making it impossible for humans to breathe without a space suit. What is that gas?",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'Carbon Dioxide',
+                        'Hydrogen',
+                        'Oxygen',
+                        'Nitrogen',
                     ],
-                    answer: 'This is option 4'
+                    answer: 'Carbon Dioxide'
                 },
             ],
         },
         {
             id: 3,
-            quizTitle: 'Quiz Title 4',
-            quizBrief: 'Something about quiz 4',
+            quizTitle: 'Space',
+            quizBrief: 'This is a quiz on space',
             questions: [
                 {
-                    question: 'This is the first question.',
+                    question: 'The command module was the part of the spacecraft that housed the crew. Which of these is not an Apollo command module name?',
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'Garfield',
+                        'Charlie Brown',
+                        'Gumdrop',
+                        'Casper',
                     ],
-                    answer: 'This is option 1',
+                    answer: 'Garfield',
                 },
                 {
-                    question: "This is the second question.",
+                    question: "How much do astronauts “grow” in space?",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'One to two inches',
+                        'About six inches',
+                        'About a foot',
+                        'They dont',
                     ],
-                    answer: 'This is option 2'
+                    answer: 'One to two inches'
                 },
                 {
-                    question: "This is the third question.",
+                    question: "A spacewalk is activity done outside of a spacecraft while in orbit above Earth. Which U.S. astronaut was the first to go on a spacewalk?",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'John Glenn',
+                        'Neil Armstrong',
+                        'Edward White',
+                        'Jim Lovell',
                     ],
-                    answer: 'This is option 3'
+                    answer: 'Edward White'
                 },
                 {
-                    question: "This is the fourth question.",
+                    question: "What was the name of the first artificial satellite, which increased interest in space exploration in the United States?",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        'Laika',
+                        'Orion',
+                        'Kometa',
+                        'Sputnik',
                     ],
-                    answer: 'This is option 4'
+                    answer: 'Sputnik'
                 },
                 {
-                    question: "This is the fifth question.",
+                    question: "When was the first U.S. space shuttle launched?",
                     options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
+                        '1969',
+                        '1975',
+                        '1981',
+                        '2000',
                     ],
-                    answer: 'This is option 4'
+                    answer: '1981'
                 },
             ],
         },
-        {
-            id: 4,
-            quizTitle: 'Quiz Title 5',
-            quizBrief: 'Something about quiz 5',
-            questions: [
-                {
-                    question: 'This is the first question.',
-                    options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
-                    ],
-                    answer: 'This is option 1',
-                },
-                {
-                    question: "This is the second question.",
-                    options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
-                    ],
-                    answer: 'This is option 2'
-                },
-                {
-                    question: "This is the third question.",
-                    options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
-                    ],
-                    answer: 'This is option 3'
-                },
-                {
-                    question: "This is the fourth question.",
-                    options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
-                    ],
-                    answer: 'This is option 4'
-                },
-                {
-                    question: "This is the fifth question.",
-                    options: [
-                        'This is option 1',
-                        'This is option 2',
-                        'This is option 3',
-                        'This is option 4',
-                    ],
-                    answer: 'This is option 4'
-                },
-            ],
-        }
     ]
 };
 
