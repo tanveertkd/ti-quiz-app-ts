@@ -1,12 +1,15 @@
-.quiz-home {
-    height: calc(100vh - 10rem);
+.quiz-body-container {
+    background-color: var(--primary-bg);
+    color: var(--color-grey);
+    height: auto;
 }
 
 .quiz-body {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 85vh;
 }
 
 .quiz-body-subhead {

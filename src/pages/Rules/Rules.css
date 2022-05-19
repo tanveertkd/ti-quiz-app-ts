@@ -4,6 +4,8 @@
     align-items: center;
     flex-direction: column;
     height: calc(100vh - 10rem);
+    background-color: var(--primary-bg);
+    color: var(--color-grey);
 }
 
 .rule-list-ol {

@@ -4,6 +4,8 @@
     display: flex;
     justify-content: space-between;
     padding: 0;
+    background-color: var(--primary-bg);
+    color: var(--color-grey);
 }
 
 .nav-main-ul {
@@ -41,4 +43,23 @@
     margin: auto 1rem;
 }
 
+.nav-main-item {
+    color: var(--color-grey);
+}
+
 /* Navigation bar ends */
+
+@media screen and (max-width: 768px) {
+
+    .nav-main-ul {
+        padding: 0.5rem;
+    }
+
+    .nav-main-li {
+        margin: auto 0.5rem;
+    }
+
+    .nav-main-middle {
+        display: none;
+    }
+}

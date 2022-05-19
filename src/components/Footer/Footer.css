@@ -1,5 +1,7 @@
 /* Footer */
 .footer {
+    background-color: var(--primary-bg);
+    color: var(--color-grey);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -21,5 +23,5 @@
 }
 
 .footer-socials-list i.social-icn {
-    color: var(--color-hover-grey);
+    color: var(--color-grey);
 }

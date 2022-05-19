@@ -1,0 +1,1 @@
+export { getQuiz, matchAnswer } from "./QuizServices";

@@ -1,40 +1,34 @@
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { matchAnswer } from '../../services';
+import { useQuiz } from '../../contexts';
+import { RulesModal } from '../RulesModal/RulesModal';
+
 import './Quiz.css';
 
 const Quiz = () => {
-    const questionsObj = {
-        id: 0,
-        quiztitle: "Quiz Title 1",
-        questions: [
-            {
-                question: 'This is the first question.',
-                options: [
-                    'This is option 1',
-                    'This is option 2',
-                    'This is option 3',
-                    'This is option 4',
-                ],
-                answer: 'This is option 1',
-            },
-            // {
-            //     question: "Question 2",
-            //     options: [
-            //         'This is option 1',
-            //         'This is option 2',
-            //         'This is option 3',
-            //         'This is option 4',
-            //     ],
-            //     answer: "option2"
-            // },
-        ],
-    };
+    const params = useParams();
+    const id = params.id!;
+    const idx = parseInt(id);
+
+    const [questionIndex, setQuestionIndex] = useState(0);
+    const { quizState, getQuizHandler, handleCorrectAnswer } = useQuiz();
+
+    const { quizTitle, questions } = quizState?.currentQuiz;
+
+    useEffect(() => {
+        getQuizHandler(idx);
+    }, []);
+
+    const [optionSelected, setOptionSelected] = useState('');
 
     return (
         <div className="quiz-body">
-            <h2>Quiz Title</h2>
+            <h2>{quizTitle}</h2>
 
-            {/* <div className="mdoal">
+            <div className="modal-container">
                 <RulesModal />
-            </div> */}
+            </div>
 
             <div className="quiz-data">
                 <div className="quiz-timer">
@@ -44,43 +38,73 @@ const Quiz = () => {
                     <p>Time Remaining</p>
                 </div>
 
-                <form className="quiz-form">
+                <div className="quiz-form">
                     <div className="question-container">
                         <p className="question">
-                            1. {questionsObj.questions.map((item) => item.question)}
+                            {questionIndex + 1}. {questions[questionIndex]?.question}
                         </p>
                         <div className="question-options grid-50-50">
-                            {questionsObj.questions.map((item) => {
-                                return item.options.map(option => {
-                                    return (
-                                        <div className="grid-item">
-                                            <button key={option} className="option-btn">{option}</button>
-                                        </div>
-                                    );
-                                })
+                            {questions[questionIndex]?.options?.map((item) => {
+                                return (
+                                    <div className="grid-item">
+                                        <button
+                                            key={item}
+                                            className={`${
+                                                optionSelected === item
+                                                    ? 'option-selected option-btn'
+                                                    : 'option-btn'
+                                            }`}
+                                            onClick={() => {
+                                                if (
+                                                    matchAnswer(
+                                                        item,
+                                                        questions[questionIndex].answer,
+                                                    )
+                                                ) {
+                                                    handleCorrectAnswer();
+                                                }
+                                                setOptionSelected(item);
+                                            }}
+                                        >
+                                            {item}
+                                        </button>
+                                    </div>
+                                );
                             })}
                         </div>
                     </div>
                     <div className="prev-next-container">
-                        <button className="previous-question change-btn">
-                        <i className='arrow prev-arrow'></i> Previous
+                        <button
+                            className="previous-question change-btn"
+                            onClick={() => {
+                                questionIndex !== 0 && setQuestionIndex((prev) => prev - 1);
+                            }}
+                        >
+                            <i className="arrow prev-arrow"></i> Previous
                         </button>
-                        <button className="next-question change-btn">
-                            Next <i className='arrow next-arrow'></i>
+                        <button
+                            className="next-question change-btn"
+                            disabled={questionIndex + 1 === questions?.length}
+                            onClick={() => {
+                                setQuestionIndex((prev) => prev + 1);
+                                setOptionSelected('');
+                            }}
+                        >
+                            Next <i className="arrow next-arrow"></i>
                         </button>
                     </div>
                     <div className="btn-submit-quiz">
-                        <a href="./result.html" className="btn btn-success-solid quiz-submit-btn">
+                        <Link to="../results" className="btn btn-success-solid quiz-submit-btn">
                             Submit
-                        </a>
-                        <a
-                            href="../../categories.html"
+                        </Link>
+                        <Link
+                            to="../categories"
                             className="btn btn-error-solid quiz-submit-btn"
                         >
                             Quit
-                        </a>
+                        </Link>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     );

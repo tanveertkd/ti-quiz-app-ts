@@ -1,6 +1,8 @@
 .quiz-card {
     border: 1px solid var(--color-hover-light-grey);
     border-radius: 4px;
+    background-color: var(--primary-bg);
+    color: var(--color-grey);
     display: flex;
     flex-direction: column;
     width: fit-content;
@@ -11,6 +13,7 @@
 .quiz-card-image {
     width: 20rem;
     height: 20rem;
+    padding: 0.5rem;
 }
 
 .quiz-card-text, .quiz-cta-container {

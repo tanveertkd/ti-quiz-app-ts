@@ -56,9 +56,9 @@ const Login = () => {
                 </form>
 
                 <div className="sign-up">
-                    <a href="./signup.html" className="btn signup-cta">
+                    <Link to="signup" className="btn signup-cta">
                         Sign Up &#8594;
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
