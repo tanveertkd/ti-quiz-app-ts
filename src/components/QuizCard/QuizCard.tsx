@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
 import './QuizCard.css';
-import tempAsset from '../../assets/temp-card-img.svg';
 
 type quizId = {
     id: number;
@@ -9,6 +8,7 @@ type quizId = {
         id: number;
         quizTitle: string;
         quizBrief: string;
+        quizImg: string
     };
 };
 
@@ -17,7 +17,7 @@ const QuizCard = ({ id, quiz }: quizId) => {
     const theme = localStorage.getItem('currentTheme');
     return (
         <div className={`quiz-card ${theme === 'dark' ? 'dark-mode' : ''}`}>
-            <img src={tempAsset} alt="quiz asset" className="quiz-card-image" />
+            <img src={quiz?.quizImg} alt="quiz asset" className="quiz-card-image" />
             <div className="quiz-card-text">
                 <p className="quiz-title" onClick={() => console.log(id)}>
                     {quiz.quizTitle}
