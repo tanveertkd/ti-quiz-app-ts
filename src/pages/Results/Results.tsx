@@ -42,7 +42,7 @@ const Results = () => {
                                     <div className="question-options grid-50-50">
                                         {question.options.map((option) => {
                                             return (
-                                                <div className="grid-item">
+                                                <div className="grid-item" key={option}>
                                                     <button
                                                         key={option}
                                                         className={`${

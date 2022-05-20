@@ -46,7 +46,7 @@ const Quiz = () => {
                         <div className="question-options grid-50-50">
                             {questions[questionIndex]?.options?.map((item) => {
                                 return (
-                                    <div className="grid-item">
+                                    <div className="grid-item" key={item}>
                                         <button
                                             key={item}
                                             className={`${
@@ -97,10 +97,7 @@ const Quiz = () => {
                         <Link to="../results" className="btn btn-success-solid quiz-submit-btn">
                             Submit
                         </Link>
-                        <Link
-                            to="../categories"
-                            className="btn btn-error-solid quiz-submit-btn"
-                        >
+                        <Link to="../categories" className="btn btn-error-solid quiz-submit-btn">
                             Quit
                         </Link>
                     </div>

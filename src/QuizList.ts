@@ -4,6 +4,7 @@ const questionsObj = {
             id: 0,
             quizTitle: 'New York',
             quizBrief: 'This is a quiz about New York City',
+            quizImg: 'https://res.cloudinary.com/ddroedz3j/image/upload/v1653037733/quiz/nyc_sye2mt.jpg',
             questions: [
                 {
                     question: 'What is the name of the main international airport at New York?',
@@ -41,7 +42,7 @@ const questionsObj = {
                         '2',
                         '3',
                         '4',
-                        '4',
+                        '5',
                     ],
                     answer: '5',
                 },
@@ -61,6 +62,7 @@ const questionsObj = {
             id: 1,
             quizTitle: 'Technology',
             quizBrief: 'This is a quiz about technology',
+            quizImg: 'https://res.cloudinary.com/ddroedz3j/image/upload/v1653037732/quiz/tech_l57th1.jpg',
             questions: [
                 {
                     question: 'What was the name of the first engine-powered airplane to take flight?',
@@ -118,6 +120,7 @@ const questionsObj = {
             id: 2,
             quizTitle: 'Mars',
             quizBrief: 'This is a quiz on Mars',
+            quizImg: 'https://res.cloudinary.com/ddroedz3j/image/upload/v1653037732/quiz/mars_ttx222.jpg',
             questions: [
                 {
                     question: 'How many moons does Mars have?',
@@ -175,6 +178,7 @@ const questionsObj = {
             id: 3,
             quizTitle: 'Space',
             quizBrief: 'This is a quiz on space',
+            quizImg: 'https://res.cloudinary.com/ddroedz3j/image/upload/v1653037733/quiz/space_wsftsn.webp',
             questions: [
                 {
                     question: 'The command module was the part of the spacecraft that housed the crew. Which of these is not an Apollo command module name?',
