@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import { useTheme } from '../../contexts/index';
+import { useThemeHook } from '../../hooks/useThemeHook';
 import './Navbar.css';
 
 const Navbar = () => {
-    const { theme, setTheme } = useTheme();
-    
+
+    const { theme, toggleTheme } = useThemeHook();
+
     return (
         // <!-- Primary Navigation -->
         <nav className="nav-main">
@@ -19,30 +20,26 @@ const Navbar = () => {
 
             {/* <!-- Nav right --> */}
             <ul className="nav-main-right nav-main-ul">
+
                 <li className="nav-main-li">
-                    {(theme === '' || theme === null) ? (
+                    {theme === 'light' ? (
                         <i
                             className="fas fa-moon nav-main-item nav-btn-login"
-                            onClick={() => {
-                                setTheme('dark-mode');
-                                localStorage.setItem('currentTheme', 'dark');
-                            }}
+                            onClick={toggleTheme}
                         />
                     ) : (
                         <i
                             className="fas fa-sun nav-main-item nav-btn-login"
-                            onClick={() => {
-                                setTheme('');
-                                localStorage.setItem('currentTheme', '');
-                            }}
+                            onClick={toggleTheme}
                         />
                     )}
                 </li>
-                <li className="nav-main-li">
+
+                {/* <li className="nav-main-li">
                     <Link to="auth" className="nav-main-item nav-btn-login">
                         Login
                     </Link>
-                </li>
+                </li> */}
                 <li className="nav-main-li">
                     <Link to="categories" className="nav-main-item">
                         Categories

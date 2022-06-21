@@ -9,6 +9,17 @@
 
 /* Media */
 
+@media screen and (max-width: 1024px) {
+    .quiz-body-container {
+        width: 100%;
+        margin: auto;
+    }
+
+    .grid-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .quiz-card-container {
         justify-items: center;

@@ -75,7 +75,7 @@ const Quiz = () => {
                     </div>
                     <div className="prev-next-container">
                         <button
-                            className="previous-question change-btn"
+                            className={questionIndex === 0 ? "btn-disabled" :"previous-question change-btn"}
                             onClick={() => {
                                 questionIndex !== 0 && setQuestionIndex((prev) => prev - 1);
                             }}
@@ -83,7 +83,7 @@ const Quiz = () => {
                             <i className="arrow prev-arrow"></i> Previous
                         </button>
                         <button
-                            className="next-question change-btn"
+                            className={questionIndex + 1 === questions?.length ? "btn-disabled" : "next-question change-btn"}
                             disabled={questionIndex + 1 === questions?.length}
                             onClick={() => {
                                 setQuestionIndex((prev) => prev + 1);
