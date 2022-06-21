@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from "react";
 
 type themeType = {
     theme: string|null;
-    setTheme: React.Dispatch<React.SetStateAction<string | null>>;
+    setTheme: React.Dispatch<React.SetStateAction<string>>;
 }
 
 type childrenType = {
@@ -12,8 +12,7 @@ type childrenType = {
 const ThemeContext = createContext({} as themeType);
 
 const ThemeContextProvider = ({children} : childrenType) => {
-
-    const [theme, setTheme] = useState(localStorage.getItem("currentTheme"));
+    const [theme, setTheme] = useState(localStorage.getItem("currentTheme") || "light");
 
     return(
         <ThemeContext.Provider value={{theme, setTheme}}>

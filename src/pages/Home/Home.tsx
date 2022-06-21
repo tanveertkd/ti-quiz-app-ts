@@ -22,9 +22,9 @@ const Home = () => {
                         Quizzes! &#8594;
                     </Link>
 
-                    <Link to="profile" className="btn-home-cta btn btn-primary-outlined">
+                    {/* <Link to="profile" className="btn-home-cta btn btn-primary-outlined">
                         Go To Profile! &#8594;
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </div>
